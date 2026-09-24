@@ -1,6 +1,3 @@
-Absolutely — here is the **entire README as one single copy-paste block**. Save it directly as `README.md`.
-
-````markdown
 # ⚙️ CPU Scheduling Simulator
 
 > An interactive web application to **visualize, compare, and analyze** CPU scheduling algorithms used in Operating Systems — with support for **CPU + I/O mixed workloads**, **preemptive scheduling**, and **priority aging**.
@@ -47,8 +44,6 @@ Unlike basic textbook implementations that only consider pure CPU bursts, this s
 ---
 
 ## 📊 Metrics Computed
-
-The simulator calculates the following metrics:
 
 - **Completion Time** — time at which the process finishes
 - **Turnaround Time** = Completion Time − Arrival Time
@@ -137,7 +132,7 @@ CPU-Scheduler/
 │
 └── data/
     └── presets.py             # Sample and random workloads
-````
+```
 
 ---
 
@@ -145,8 +140,8 @@ CPU-Scheduler/
 
 ### Prerequisites
 
-* Python **3.10 or higher**
-* `pip`
+- Python **3.10 or higher**
+- `pip`
 
 ### 1. Clone the Repository
 
@@ -157,14 +152,14 @@ cd cpu-scheduler
 
 ### 2. Create a Virtual Environment
 
-#### Windows
+**Windows**
 
 ```powershell
 python -m venv venv
 venv\Scripts\activate
 ```
 
-#### macOS / Linux
+**macOS / Linux**
 
 ```bash
 python3 -m venv venv
@@ -205,9 +200,9 @@ A sample mixed CPU + I/O workload is available as a preset in the application.
 
 Running SRTN on this workload produces:
 
-* CPU and I/O Gantt charts
-* Per-process waiting, turnaround, and response times
-* Performance comparison with the other scheduling algorithms
+- CPU and I/O Gantt charts
+- Per-process waiting, turnaround, and response times
+- Performance comparison with the other scheduling algorithms
 
 ---
 
@@ -219,20 +214,16 @@ Preemptive algorithms such as SRTN, LRTN, and Dynamic Priority advance one time 
 
 This allows the simulator to detect events such as:
 
-* New process arrivals
-* I/O completion
-* Priority changes
-* Preemption
+- New process arrivals
+- I/O completion
+- Priority changes
+- Preemption
 
 A burst-level shortcut could miss a preemption event occurring in the middle of a CPU burst.
 
----
-
 ### 2. Why Model I/O Explicitly?
 
-Real processes frequently alternate between CPU execution and I/O operations.
-
-For example:
+Real processes frequently alternate between CPU execution and I/O operations:
 
 ```text
 CPU → I/O → CPU → I/O → CPU
@@ -242,29 +233,21 @@ When a process performs I/O, it leaves the CPU and enters the waiting state. Aft
 
 This allows the simulator to demonstrate:
 
-* CPU blocking
-* I/O waiting
-* CPU and I/O overlap
-* Ready-queue re-entry
-* More realistic Round Robin behavior
-
----
+- CPU blocking
+- I/O waiting
+- CPU and I/O overlap
+- Ready-queue re-entry
+- More realistic Round Robin behavior
 
 ### 3. Why Aging in Dynamic Priority?
 
 A pure priority scheduler can cause **starvation**, where low-priority processes wait for a long time.
 
-Aging addresses this by gradually increasing the priority of a waiting process.
-
-This allows processes that have waited for a long time to eventually receive CPU time.
-
----
+Aging addresses this by gradually increasing the priority of a waiting process, so processes that have waited long enough eventually receive CPU time.
 
 ### 4. Why Separate CPU and I/O Gantt Charts?
 
-CPU execution and I/O operations can overlap in time.
-
-Therefore, the simulator displays them using separate timelines:
+CPU execution and I/O operations can overlap in time, so the simulator displays them on separate timelines:
 
 ```text
 CPU Timeline
@@ -280,19 +263,11 @@ This makes CPU execution and I/O activity easier to understand.
 
 ## ⏱️ Complexity Analysis
 
-Let:
-
-* `N` = number of processes
-* `T` = total simulation time in ticks
+Let `N` = number of processes and `T` = total simulation time in ticks.
 
 ### Non-Preemptive Algorithms
 
-Examples:
-
-* FCFS
-* SJF
-* LJF
-* Static Priority
+FCFS, SJF, LJF
 
 | Operation           | Complexity          |
 | ------------------- | ------------------- |
@@ -303,12 +278,7 @@ The scheduler may scan the ready processes to select the next process.
 
 ### Preemptive Algorithms
 
-Examples:
-
-* SRTN
-* LRTN
-* Round Robin
-* Dynamic Priority
+SRTN, LRTN, Round Robin, Static Priority, Dynamic Priority
 
 | Operation             | Complexity |
 | --------------------- | ---------- |
@@ -327,14 +297,7 @@ The tick-based approach allows the simulator to detect arrivals and other events
 
 ### Practical Note
 
-For a typical demonstration with:
-
-```text
-N ≤ 10
-T ≤ 200
-```
-
-the number of simulation steps remains small and is easily handled by Python.
+For a typical demonstration with `N ≤ 10` and `T ≤ 200`, the number of simulation steps remains small and is easily handled by Python.
 
 Real operating systems use more sophisticated event-driven mechanisms and scheduling data structures rather than repeatedly scanning every process at every time unit.
 
@@ -342,20 +305,18 @@ Real operating systems use more sophisticated event-driven mechanisms and schedu
 
 ## 🎓 Concepts Demonstrated
 
-The project demonstrates the following Operating Systems concepts:
-
-* Process lifecycle and state transitions
-* Process Control Block (PCB) concepts
-* Ready and waiting queues
-* Preemptive vs non-preemptive scheduling
-* Context switching
-* Starvation and aging
-* Convoy effect
-* Time quantum in Round Robin
-* CPU + I/O overlap
-* Scheduling performance metrics
-* Algorithm complexity
-* Scheduling trade-offs
+- Process lifecycle and state transitions
+- Process Control Block (PCB) concepts
+- Ready and waiting queues
+- Preemptive vs non-preemptive scheduling
+- Context switching
+- Starvation and aging
+- Convoy effect
+- Time quantum in Round Robin
+- CPU + I/O overlap
+- Scheduling performance metrics
+- Algorithm complexity
+- Scheduling trade-offs
 
 ---
 
@@ -363,40 +324,34 @@ The project demonstrates the following Operating Systems concepts:
 
 By building this project, I gained practical experience with:
 
-* Designing a modular Python application
-* Separating application logic into `core`, `ui`, and `data` modules
-* Implementing classical CPU scheduling algorithms
-* Implementing preemption and stateful simulation
-* Handling CPU and I/O bursts
-* Building interactive Streamlit interfaces
-* Creating custom HTML/CSS UI components
-* Rendering Matplotlib Gantt charts
-* Computing scheduling performance metrics
-* Comparing multiple algorithms using a common workload
+- Designing a modular Python application
+- Separating application logic into `core`, `ui`, and `data` modules
+- Implementing classical CPU scheduling algorithms
+- Implementing preemption and stateful simulation
+- Handling CPU and I/O bursts
+- Building interactive Streamlit interfaces
+- Creating custom HTML/CSS UI components
+- Rendering Matplotlib Gantt charts
+- Computing scheduling performance metrics
+- Comparing multiple algorithms using a common workload
 
 ---
 
 ## 🚀 Future Enhancements
 
-The following features can be added in future versions:
-
-* [ ] Multilevel Feedback Queue (MLFQ) with configurable levels
-* [ ] Multiprocessor scheduling with 2+ simulated CPUs
-* [ ] Load balancing between simulated CPUs
-* [ ] Real-time scheduling algorithms
-
-  * Rate Monotonic Scheduling
-  * Earliest Deadline First
-* [ ] Unit tests using `pytest`
-* [ ] Live deployment
-* [ ] Export results to CSV/PDF
-* [ ] Context-switch overhead simulation
+- [ ] Multilevel Feedback Queue (MLFQ) with configurable levels
+- [ ] Multiprocessor scheduling with 2+ simulated CPUs
+- [ ] Load balancing between simulated CPUs
+- [ ] Real-time scheduling algorithms
+  - Rate Monotonic Scheduling
+  - Earliest Deadline First
+- [ ] Unit tests using `pytest`
+- [ ] Live deployment
+- [ ] Export results to CSV/PDF
+- [ ] Context-switch overhead simulation
 
 ---
 
 ## 📄 License
 
 This project is licensed under the **MIT License**.
-
-```
-```
