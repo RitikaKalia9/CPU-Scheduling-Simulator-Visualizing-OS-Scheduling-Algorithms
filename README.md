@@ -5,6 +5,11 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red?logo=streamlit)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://cpu-scheduler-ritika.streamlit.app/)
+
+### 🔗 Live Demo: **[https://cpu-scheduler-ritika.streamlit.app/](https://cpu-scheduler-ritika.streamlit.app/)**
+
+> Hosted on Streamlit Community Cloud. If the app has been idle, click **"Yes, get this app back up!"** and wait ~30 seconds for it to wake up.
 
 ---
 
@@ -112,7 +117,7 @@ Additional controls include:
 ## 📁 Project Structure
 
 ```text
-CPU-Scheduler/
+CPU-Scheduling-Simulator-Visualizing-OS-Scheduling-Algorithms/
 │
 ├── app.py                     # Streamlit entry point
 ├── requirements.txt           # Python dependencies
@@ -146,8 +151,8 @@ CPU-Scheduler/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Ritikakalia1/cpu-scheduler.git
-cd cpu-scheduler
+git clone https://github.com/RitikaKalia9/CPU-Scheduling-Simulator-Visualizing-OS-Scheduling-Algorithms.git
+cd CPU-Scheduling-Simulator-Visualizing-OS-Scheduling-Algorithms
 ```
 
 ### 2. Create a Virtual Environment
@@ -183,6 +188,19 @@ The application will be available at:
 ```text
 http://localhost:8501
 ```
+
+---
+
+## ☁️ Deployment
+
+The app is deployed on **Streamlit Community Cloud**: [https://cpu-scheduler-ritika.streamlit.app/](https://cpu-scheduler-ritika.streamlit.app/)
+
+To deploy your own copy:
+
+1. Fork or push this repository to GitHub (make sure `requirements.txt` is in the repo root).
+2. Sign in at [share.streamlit.io](https://share.streamlit.io) with GitHub and click **Create app**.
+3. Select the repository, branch `main`, and set **Main file path** to `app.py`.
+4. Click **Deploy**. Every push to `main` redeploys automatically.
 
 ---
 
@@ -346,7 +364,7 @@ By building this project, I gained practical experience with:
   - Rate Monotonic Scheduling
   - Earliest Deadline First
 - [ ] Unit tests using `pytest`
-- [ ] Live deployment
+- [x] Live deployment — [https://cpu-scheduler-ritika.streamlit.app/](https://cpu-scheduler-ritika.streamlit.app/)
 - [ ] Export results to CSV/PDF
 - [ ] Context-switch overhead simulation
 
